@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoVault India — Future of Mobility</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="login-page">
+
+  <!-- Animated background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="particles" id="particles"></div>
+
+  <!-- Header -->
+  <header class="site-header glass">
+    <div class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">AutoVault<span class="logo-accent">India</span></span>
+    </div>
+    <nav class="header-nav">
+      <a href="#vehicles">Vehicles</a>
+      <a href="#about">About</a>
+      <a href="pages/admin-login.html" class="btn-outline-sm">Admin</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge animate-in delay-1">🇮🇳 India's Premier EV Pre-Booking Platform</div>
+      <h1 class="hero-title animate-in delay-2">
+        Reserve the<br/>
+        <span class="gradient-text">Future of Driving</span>
+      </h1>
+      <p class="hero-sub animate-in delay-3">
+        Secure your dream electric vehicle with instant OTP verification. 
+        No upfront payment. Just your spot in the electric revolution.
+      </p>
+      <div class="hero-actions animate-in delay-4">
+        <button class="btn-primary" id="googleLoginBtn" onclick="loginWithGoogle()">
+          <img src="https://www.google.com/favicon.ico" width="18" alt="G"/>
+          Continue with Google
+        </button>
+        <a href="#vehicles" class="btn-ghost">Explore Vehicles ↓</a>
+      </div>
+      <div class="hero-stats animate-in delay-5">
+        <div class="stat"><span class="stat-num">2,400+</span><span class="stat-label">Pre-Bookings</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">12</span><span class="stat-label">EV Models</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">₹0</span><span class="stat-label">Booking Fee</span></div>
+      </div>
+    </div>
+    <div class="hero-visual animate-in delay-3">
+      <div class="car-showcase">
+        <div class="car-glow-ring"></div>
+        <img src="https://www.motortrend.com/uploads/2023/01/2023-Tata-Nexon-EV-Max-front-three-quarter-in-motion-3.jpg" 
+             alt="Featured EV" class="hero-car-img" 
+             onerror="this.src='https://via.placeholder.com/500x300/0a0a1a/00d4ff?text=⚡+AutoVault+India'"/>
+        <div class="car-badge-floating">Nexon EV Max<br/><span>₹19.74 Lakh</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vehicles Section -->
+  <section class="vehicles-section" id="vehicles">
+    <div class="section-header">
+      <h2 class="section-title">Available Models</h2>
+      <p class="section-sub">Choose your electric companion</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="sedan">Sedan</button>
+      <button class="filter-btn" data-filter="suv">SUV</button>
+      <button class="filter-btn" data-filter="hatchback">Hatchback</button>
+      <button class="filter-btn" data-filter="luxury">Luxury</button>
+    </div>
+
+    <div class="vehicles-grid" id="vehiclesGrid">
+      <!-- Cars populated by JS -->
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Why <span class="gradient-text">AutoVault India?</span></h2>
+        <p>We bridge the gap between Indian EV buyers and manufacturers. No hidden fees, no spam — just a seamless pre-booking experience powered by modern technology.</p>
+        <ul class="feature-list">
+          <li>✅ Google Sign-In — secure & instant</li>
+          <li>✅ OTP verification for every booking</li>
+          <li>✅ Real-time booking status tracking</li>
+          <li>✅ Zero booking fee — cancel anytime</li>
+          <li>✅ Admin dashboard for dealers</li>
+        </ul>
+      </div>
+      <div class="about-cards">
+        <div class="mini-card glass"><div class="mini-icon">🔒</div><b>Secure</b><p>Firebase-backed auth</p></div>
+        <div class="mini-card glass"><div class="mini-icon">⚡</div><b>Instant</b><p>OTP in seconds</p></div>
+        <div class="mini-card glass"><div class="mini-icon">📊</div><b>Tracked</b><p>Live booking dashboard</p></div>
+        <div class="mini-card glass"><div class="mini-icon">🇮🇳</div><b>Made for India</b><p>₹ INR pricing</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="logo">⚡ AutoVault<span class="logo-accent">India</span></div>
+      <p>College Project — Vehicle Pre-Booking System</p>
+      <p class="footer-small">Built with Firebase • Google Auth • OTP Verification</p>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal" style="display:none">
+    <div class="modal glass">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Auth Required Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/vehicles.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
