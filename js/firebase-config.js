@@ -24,7 +24,7 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 // Add your admin email addresses here
 const ADMIN_EMAILS = [
   "admin@autovaultindia.com",
-  "your-admin-email@gmail.com"   // ← Replace with your actual admin Gmail
+  "sudhaashok1141@gmail.com"   // ← Replace with your actual admin Gmail
 ];
 
 function isAdmin(email) {
