@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard — AutoVault India</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/admin.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar glass">
+    <div class="sidebar-logo">⚡ <span>AutoVault</span><br/><small>Admin Panel</small></div>
+    <nav class="sidebar-nav">
+      <a class="nav-item active" data-tab="overview" onclick="showTab('overview')">📊 Overview</a>
+      <a class="nav-item" data-tab="bookings" onclick="showTab('bookings')">📋 Bookings</a>
+      <a class="nav-item" data-tab="users" onclick="showTab('users')">👥 Users</a>
+      <a class="nav-item" data-tab="vehicles" onclick="showTab('vehicles')">🚗 Vehicles</a>
+    </nav>
+    <div class="sidebar-footer">
+      <img id="adminPhoto" src="" width="36" style="border-radius:50%;border:2px solid rgba(124,58,237,0.5)" onerror="this.style.display='none'"/>
+      <div>
+        <div id="adminName" style="font-size:0.85rem;font-weight:600"></div>
+        <div style="font-size:0.7rem;color:var(--text-muted)">Site Admin</div>
+      </div>
+      <button onclick="logOut()" title="Sign Out" style="margin-left:auto;background:transparent;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem">🚪</button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+
+    <!-- Top Bar -->
+    <div class="admin-topbar glass">
+      <h1 class="admin-page-title" id="pageTitle">Overview</h1>
+      <div class="topbar-actions">
+        <button class="btn-primary" style="font-size:0.8rem;padding:8px 16px" onclick="exportCSV()">⬇ Export CSV</button>
+        <a href="../index.html" target="_blank" class="btn-ghost" style="font-size:0.8rem;padding:8px 16px">🌐 View Site</a>
+      </div>
+    </div>
+
+    <!-- Overview Tab -->
+    <div class="tab-panel active" id="tab-overview">
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card glass"><div class="stat-icon">📋</div><div><div class="big-num" id="s-total">—</div><div class="stat-card-label">Total Bookings</div></div></div>
+        <div class="stat-card glass"><div class="stat-icon">✅</div><div><div class="big-num" id="s-confirmed">—</div><div class="stat-card-label">Confirmed</div></div></div>
+        <div class="stat-card glass"><div class="stat-icon">❌</div><div><div class="big-num" id="s-cancelled">—</div><div class="stat-card-label">Cancelled</div></div></div>
+        <div class="stat-card glass"><div class="stat-icon">👥</div><div><div class="big-num" id="s-users">—</div><div class="stat-card-label">Total Users</div></div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="panel glass">
+          <h3 class="panel-title">📈 Recent Bookings</h3>
+          <div id="recentBookings"><div class="spinner" style="margin:20px auto"></div></div>
+        </div>
+        <div class="panel glass">
+          <h3 class="panel-title">🏆 Top Booked Vehicles</h3>
+          <div id="topVehicles"><div class="spinner" style="margin:20px auto"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookings Tab -->
+    <div class="tab-panel" id="tab-bookings">
+      <div class="bookings-controls">
+        <input type="text" id="bookingSearch" placeholder="🔍 Search by name, ID, vehicle..." oninput="filterBookingsTable()" style="max-width:320px"/>
+        <select id="statusFilter" onchange="filterBookingsTable()" style="max-width:160px">
+          <option value="">All Status</option>
+          <option>Confirmed</option>
+          <option>Cancelled</option>
+        </select>
+      </div>
+      <div class="table-wrap glass">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th><th>Customer</th><th>Vehicle</th>
+              <th>City</th><th>Color</th><th>Date</th>
+              <th>Status</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTableBody">
+            <tr><td colspan="8" style="text-align:center;padding:30px;color:var(--text-muted)">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Users Tab -->
+    <div class="tab-panel" id="tab-users">
+      <div class="table-wrap glass">
+        <table class="admin-table">
+          <thead>
+            <tr><th>Photo</th><th>Name</th><th>Email</th><th>Role</th><th>Bookings</th></tr>
+          </thead>
+          <tbody id="usersTableBody">
+            <tr><td colspan="5" style="text-align:center;padding:30px;color:var(--text-muted)">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Vehicles Tab -->
+    <div class="tab-panel" id="tab-vehicles">
+      <div id="vehiclesAdminGrid" class="vehicles-admin-grid"></div>
+    </div>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/vehicles.js"></script>
+  <script>
+    let allBookings = [], allUsers = [];
+
+    // Auth guard
+    auth.onAuthStateChanged(async user => {
+      if (!user) { window.location.href = "admin-login.html"; return; }
+      if (!isAdmin(user.email)) { auth.signOut(); window.location.href = "../index.html"; return; }
+      document.getElementById("adminPhoto").src = user.photoURL || "";
+      document.getElementById("adminName").textContent = user.displayName?.split(" ")[0];
+      await loadAll();
+    });
+
+    async function loadAll() {
+      await Promise.all([loadBookings(), loadUsers()]);
+      renderTopVehicles();
+      renderVehiclesTab();
+    }
+
+    // ── Bookings ─────────────────────────────────────────────
+    async function loadBookings() {
+      const snap = await db.collection("bookings").orderBy("createdAt", "desc").get();
+      allBookings = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      updateStats();
+      renderRecentBookings();
+      renderBookingsTable();
+    }
+
+    function updateStats() {
+      document.getElementById("s-total").textContent = allBookings.length;
+      document.getElementById("s-confirmed").textContent = allBookings.filter(b => b.status === "Confirmed").length;
+      document.getElementById("s-cancelled").textContent = allBookings.filter(b => b.status === "Cancelled").length;
+    }
+
+    function renderRecentBookings() {
+      const el = document.getElementById("recentBookings");
+      const recent = allBookings.slice(0, 5);
+      if (!recent.length) { el.innerHTML = "<p style='color:var(--text-muted);text-align:center;padding:20px'>No bookings yet</p>"; return; }
+      el.innerHTML = recent.map(b => `
+        <div class="recent-row">
+          <div>
+            <b style="font-size:0.9rem">${b.vehicleName}</b>
+            <div style="font-size:0.75rem;color:var(--text-muted)">${b.userName} • ${b.city}</div>
+          </div>
+          <span class="booking-status status-${(b.status||'').toLowerCase()}" style="font-size:0.65rem">${b.status}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderTopVehicles() {
+      const counts = {};
+      allBookings.forEach(b => { if(b.vehicleName) counts[b.vehicleName] = (counts[b.vehicleName]||0)+1; });
+      const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,5);
+      const el = document.getElementById("topVehicles");
+      const max = sorted[0]?.[1] || 1;
+      el.innerHTML = sorted.map(([name, count]) => `
+        <div style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:4px">
+            <span>${name}</span><span style="color:var(--accent);font-family:var(--font-mono)">${count}</span>
+          </div>
+          <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px">
+            <div style="height:100%;width:${(count/max)*100}%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;transition:width 0.6s"></div>
+          </div>
+        </div>
+      `).join("") || "<p style='color:var(--text-muted);text-align:center;padding:20px'>No data yet</p>";
+    }
+
+    function renderBookingsTable(data) {
+      const rows = (data || allBookings);
+      const tbody = document.getElementById("bookingsTableBody");
+      if (!rows.length) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:30px;color:var(--text-muted)">No bookings found</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = rows.map(b => `
+        <tr>
+          <td><code style="color:var(--accent);font-family:var(--font-mono);font-size:0.75rem">${b.bookingId}</code></td>
+          <td><div style="font-size:0.88rem"><b>${b.userName}</b></div><div style="font-size:0.72rem;color:var(--text-muted)">${b.userEmail}</div></td>
+          <td style="font-size:0.85rem">${b.vehicleName}<br/><span style="color:var(--text-muted);font-size:0.72rem">₹${b.vehiclePrice}L</span></td>
+          <td style="font-size:0.82rem">${b.city}</td>
+          <td style="font-size:0.82rem">${b.color}</td>
+          <td style="font-size:0.75rem;color:var(--text-muted)">${b.createdAt?.toDate?b.createdAt.toDate().toLocaleDateString('en-IN'):'—'}</td>
+          <td><span class="booking-status status-${(b.status||'').toLowerCase()}" style="font-size:0.65rem">${b.status}</span></td>
+          <td>
+            <select onchange="updateStatus('${b.bookingId}',this.value)" style="width:120px;font-size:0.78rem;padding:4px 8px">
+              <option ${b.status==='Confirmed'?'selected':''}>Confirmed</option>
+              <option ${b.status==='Cancelled'?'selected':''}>Cancelled</option>
+              <option ${b.status==='Pending'?'selected':''}>Pending</option>
+            </select>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function filterBookingsTable() {
+      const q = document.getElementById("bookingSearch").value.toLowerCase();
+      const s = document.getElementById("statusFilter").value;
+      const filtered = allBookings.filter(b => {
+        const match = !q || [b.bookingId,b.userName,b.userEmail,b.vehicleName,b.city].some(v=>(v||'').toLowerCase().includes(q));
+        const statusMatch = !s || b.status === s;
+        return match && statusMatch;
+      });
+      renderBookingsTable(filtered);
+    }
+
+    async function updateStatus(bookingId, status) {
+      try {
+        await db.collection("bookings").doc(bookingId).update({ status });
+        const b = allBookings.find(b => b.bookingId === bookingId);
+        if (b) b.status = status;
+        updateStats();
+        showToast(`Status updated to ${status}`, "success");
+      } catch(e) { showToast("Error: " + e.message, "error"); }
+    }
+
+    // ── Users ─────────────────────────────────────────────────
+    async function loadUsers() {
+      const snap = await db.collection("users").get();
+      allUsers = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      document.getElementById("s-users").textContent = allUsers.length;
+      const tbody = document.getElementById("usersTableBody");
+      tbody.innerHTML = allUsers.map(u => {
+        const bookingCount = allBookings.filter(b => b.userEmail === u.email).length;
+        return `<tr>
+          <td><img src="${u.photo||''}" width="34" style="border-radius:50%" onerror="this.src='https://via.placeholder.com/34/0a0a1a/00d4ff?text=U'"/></td>
+          <td style="font-size:0.88rem"><b>${u.name||'—'}</b></td>
+          <td style="font-size:0.78rem;color:var(--text-muted)">${u.email}</td>
+          <td><span class="booking-status ${u.role==='admin'?'status-confirmed':'status-pending'}" style="font-size:0.65rem">${u.role||'user'}</span></td>
+          <td style="font-family:var(--font-mono);color:var(--accent)">${bookingCount}</td>
+        </tr>`;
+      }).join("") || `<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--text-muted)">No users yet</td></tr>`;
+    }
+
+    // ── Vehicles Tab ──────────────────────────────────────────
+    function renderVehiclesTab() {
+      const grid = document.getElementById("vehiclesAdminGrid");
+      grid.innerHTML = VEHICLES.map(v => {
+        const count = allBookings.filter(b => b.vehicleId === v.id).length;
+        return `
+          <div class="vehicle-admin-card glass">
+            <img src="${v.image}" alt="${v.name}" onerror="this.src='https://via.placeholder.com/280x160/0a0a1a/00d4ff?text=${encodeURIComponent(v.name)}'"/>
+            <div class="vac-body">
+              <div style="font-size:0.7rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase">${v.brand}</div>
+              <b style="font-family:var(--font-display);font-size:1rem">${v.name}</b>
+              <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.82rem">
+                <span style="color:var(--text-muted)">₹${v.price}L • ${v.range}km</span>
+                <span style="color:var(--accent);font-family:var(--font-mono)">${count} bookings</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // ── Tabs ──────────────────────────────────────────────────
+    function showTab(tab) {
+      document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+      document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
+      document.getElementById("tab-" + tab).classList.add("active");
+      document.querySelector(`[data-tab="${tab}"]`).classList.add("active");
+      const titles = { overview:"Overview", bookings:"All Bookings", users:"User Management", vehicles:"Vehicle Inventory" };
+      document.getElementById("pageTitle").textContent = titles[tab];
+    }
+
+    // ── Export CSV ────────────────────────────────────────────
+    function exportCSV() {
+      const headers = ["Booking ID","Customer","Email","Vehicle","Price","City","Color","Phone","Status","Date"];
+      const rows = allBookings.map(b => [
+        b.bookingId, b.userName, b.userEmail, b.vehicleName,
+        `₹${b.vehiclePrice}L`, b.city, b.color, b.phone, b.status,
+        b.createdAt?.toDate?.().toLocaleDateString('en-IN') || ''
+      ]);
+      const csv = [headers, ...rows].map(r => r.map(v => `"${v}"`).join(",")).join("\n");
+      const blob = new Blob([csv], { type: "text/csv" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `autovault-bookings-${new Date().toLocaleDateString('en-IN').replace(/\//g,'-')}.csv`;
+      a.click();
+      showToast("CSV exported!", "success");
+    }
+
+    function logOut() { auth.signOut().then(() => window.location.href = "../index.html"); }
+
+    function showToast(msg, type="info") {
+      const t = document.getElementById("toast");
+      t.textContent = msg; t.className = `toast toast-${type} show`;
+      setTimeout(() => t.classList.remove("show"), 3000);
+    }
+  </script>
+</body>
+</html>

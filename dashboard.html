@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Bookings — AutoVault India</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/dashboard.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <header class="site-header glass">
+    <a href="../index.html" class="logo"><span class="logo-icon">⚡</span>AutoVault<span class="logo-accent">India</span></a>
+    <div class="user-header-info" id="userHeaderInfo"></div>
+  </header>
+
+  <main class="dashboard-main">
+    <!-- Profile Card -->
+    <aside class="profile-sidebar glass">
+      <div class="profile-avatar-wrap">
+        <img id="profilePhoto" src="" alt="Avatar" class="profile-photo" onerror="this.src='https://via.placeholder.com/80/0a0a1a/00d4ff?text=U'"/>
+        <div class="profile-status">🟢</div>
+      </div>
+      <h2 id="profileName" class="profile-name">Loading...</h2>
+      <p id="profileEmail" class="profile-email"></p>
+      <div class="profile-badge">Verified User</div>
+      <div class="profile-stats">
+        <div class="p-stat"><span id="totalBookings">0</span><small>Bookings</small></div>
+        <div class="p-stat"><span id="activeBookings">0</span><small>Active</small></div>
+      </div>
+      <button class="btn-ghost full-width" onclick="logOut()" style="margin-top:16px">🚪 Sign Out</button>
+      <a href="../index.html" class="btn-ghost full-width" style="margin-top:8px;text-align:center;display:block">← Back to Home</a>
+    </aside>
+
+    <!-- Bookings Content -->
+    <section class="bookings-content">
+      <div class="bookings-header">
+        <h1 class="section-title" style="font-size:1.8rem">My Pre-Bookings</h1>
+        <a href="../index.html#vehicles" class="btn-primary" style="font-size:0.85rem;padding:10px 20px">+ New Booking</a>
+      </div>
+
+      <div id="bookingsList" class="bookings-list">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Fetching your bookings...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cancel Confirmation Modal -->
+  <div class="modal-overlay" id="cancelModal" style="display:none">
+    <div class="modal glass" style="max-width:380px">
+      <h3 class="modal-title" style="margin-bottom:10px">Cancel Booking?</h3>
+      <p style="color:var(--text-muted);margin-bottom:24px;font-size:0.9rem">This will cancel your pre-booking for <b id="cancelVehicleName"></b>. You can re-book anytime.</p>
+      <div style="display:flex;gap:12px">
+        <button class="btn-ghost full-width" onclick="document.getElementById('cancelModal').style.display='none'">Keep it</button>
+        <button class="btn-primary full-width" style="background:linear-gradient(135deg,#ef4444,#b91c1c)" onclick="confirmCancel()">Yes, Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script>
+    let cancelBookingId = null;
+
+    auth.onAuthStateChanged(async (user) => {
+      if (!user) { window.location.href = "../index.html"; return; }
+      if (isAdmin(user.email)) { window.location.href = "admin.html"; return; }
+
+      document.getElementById("profilePhoto").src = user.photoURL || "";
+      document.getElementById("profileName").textContent = user.displayName;
+      document.getElementById("profileEmail").textContent = user.email;
+      document.getElementById("userHeaderInfo").innerHTML = `
+        <img src="${user.photoURL}" width="32" style="border-radius:50%" onerror="this.style.display='none'"/>
+        <span style="font-size:0.85rem">${user.displayName}</span>
+      `;
+      loadBookings(user.uid);
+    });
+
+    async function loadBookings(uid) {
+      const list = document.getElementById("bookingsList");
+      try {
+        const snap = await db.collection("bookings")
+          .where("userId", "==", uid)
+          .orderBy("createdAt", "desc")
+          .get();
+
+        const bookings = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        document.getElementById("totalBookings").textContent = bookings.length;
+        document.getElementById("activeBookings").textContent = bookings.filter(b => b.status === "Confirmed").length;
+
+        if (bookings.length === 0) {
+          list.innerHTML = `
+            <div class="empty-state">
+              <div style="font-size:3rem;margin-bottom:12px">🚗</div>
+              <h3>No bookings yet</h3>
+              <p>Start your electric journey by pre-booking a vehicle</p>
+              <a href="../index.html#vehicles" class="btn-primary" style="margin-top:20px;display:inline-flex">Browse Vehicles</a>
+            </div>`;
+          return;
+        }
+
+        list.innerHTML = bookings.map(b => `
+          <div class="booking-card glass">
+            <div class="booking-img">
+              <img src="${b.vehicleImage}" alt="${b.vehicleName}"
+                   onerror="this.src='https://via.placeholder.com/160x100/0a0a1a/00d4ff?text=EV'"/>
+            </div>
+            <div class="booking-info">
+              <div class="booking-top">
+                <div>
+                  <span class="card-brand">${b.vehicleBrand}</span>
+                  <h3 class="card-name" style="font-size:1.2rem">${b.vehicleName}</h3>
+                  <p class="booking-id">Booking ID: <code>${b.bookingId}</code></p>
+                </div>
+                <div class="booking-status status-${(b.status||'').toLowerCase()}">${b.status}</div>
+              </div>
+              <div class="booking-meta">
+                <span>🎨 ${b.color}</span>
+                <span>📍 ${b.city}</span>
+                <span>📱 ${b.phone}</span>
+                <span>💰 ₹${b.vehiclePrice} Lakh</span>
+              </div>
+              <div class="booking-date">${b.createdAt?.toDate ? b.createdAt.toDate().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}) : 'Just now'}</div>
+            </div>
+            ${b.status === "Confirmed" ? `
+              <button class="cancel-btn" onclick="openCancel('${b.bookingId}','${b.vehicleName}')">Cancel</button>
+            ` : ''}
+          </div>
+        `).join("");
+      } catch (err) {
+        list.innerHTML = `<div class="empty-state"><p>Error loading bookings: ${err.message}</p></div>`;
+      }
+    }
+
+    function openCancel(id, name) {
+      cancelBookingId = id;
+      document.getElementById("cancelVehicleName").textContent = name;
+      document.getElementById("cancelModal").style.display = "flex";
+    }
+
+    async function confirmCancel() {
+      if (!cancelBookingId) return;
+      try {
+        await db.collection("bookings").doc(cancelBookingId).update({ status: "Cancelled" });
+        document.getElementById("cancelModal").style.display = "none";
+        showToast("Booking cancelled.", "info");
+        auth.onAuthStateChanged(user => user && loadBookings(user.uid));
+      } catch(e) { showToast("Error: " + e.message, "error"); }
+    }
+
+    function logOut() {
+      auth.signOut().then(() => window.location.href = "../index.html");
+    }
+
+    function showToast(msg, type="info") {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.className = `toast toast-${type} show`;
+      setTimeout(() => t.classList.remove("show"), 3000);
+    }
+  </script>
+</body>
+</html>
