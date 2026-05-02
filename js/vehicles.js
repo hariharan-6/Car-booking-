@@ -15,7 +15,7 @@ const VEHICLES = [
     seats: 5,
     color: "#0ea5e9",
     badge: "Best Seller",
-    image: "https://www.motortrend.com/uploads/2023/01/2023-Tata-Nexon-EV-Max-front-three-quarter-in-motion-3.jpg",
+    image: "images/tata-nexon-ev-max.png",
     features: ["Dual Zone AC", "Panoramic Sunroof", "Ventilated Seats", "ADAS", "Connected Car Tech"],
     desc: "India's most popular electric SUV with a massive 437km range and futuristic features for the modern Indian family."
   },
@@ -31,7 +31,7 @@ const VEHICLES = [
     seats: 5,
     color: "#22c55e",
     badge: "New Launch",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Tata_Punch_EV_at_Bharat_Mobility_2024.jpg/1280px-Tata_Punch_EV_at_Bharat_Mobility_2024.jpg",
+    image: "images/tata-punch-ev.png",
     features: ["7-inch Touchscreen", "Wireless Charger", "Auto Headlamps", "360° Camera", "iRA Connected"],
     desc: "Compact and mighty — the Punch EV packs a 421km range in a fun sub-compact SUV perfect for city and highways."
   },
@@ -47,7 +47,7 @@ const VEHICLES = [
     seats: 5,
     color: "#a855f7",
     badge: "🔥 Hot",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Mahindra_BE.6e_at_Bharat_Mobility_Global_Expo_2025_%28cropped%29.jpg/1280px-Mahindra_BE.6e_at_Bharat_Mobility_Global_Expo_2025_%28cropped%29.jpg",
+    image: "images/mahindra-be6e.png",
     features: ["682km Range", "0-100 in 6.7s", "Fast DC Charging", "Sony Audio", "Level 2 ADAS"],
     desc: "Mahindra's flagship electric SUV breaks all barriers with 682km range and supercar-level acceleration."
   },
@@ -63,7 +63,7 @@ const VEHICLES = [
     seats: 5,
     color: "#f59e0b",
     badge: "Popular",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/MG_Windsor_EV_at_Bharat_Mobility_2025.jpg/1280px-MG_Windsor_EV_at_Bharat_Mobility_2025.jpg",
+    image: "images/mg-windsor-ev.png",
     features: ["Battery-as-a-Service", "Reclining Rear Seats", "Infinity Display", "Wireless AA/CP", "One Pedal Drive"],
     desc: "Redefining value with its BaaS model — pay only for battery usage and enjoy premium features at mid-range pricing."
   },
@@ -79,7 +79,7 @@ const VEHICLES = [
     seats: 5,
     color: "#ef4444",
     badge: "Premium",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/BYD_Seal_at_the_2022_Paris_Motor_Show.jpg/1280px-BYD_Seal_at_the_2022_Paris_Motor_Show.jpg",
+    image: "images/byd-seal.png",
     features: ["AWD Available", "Blade Battery", "DiPilot ADAS", "Rotating Center Console", "12.8\" Rotating Screen"],
     desc: "A premium electric sedan with ocean-inspired aerodynamics and BYD's legendary Blade Battery technology."
   },
@@ -95,7 +95,7 @@ const VEHICLES = [
     seats: 5,
     color: "#06b6d4",
     badge: "Top Rated",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hyundai_Creta_Electric_at_Bharat_Mobility_2024.jpg/1280px-Hyundai_Creta_Electric_at_Bharat_Mobility_2024.jpg",
+    image: "images/hyundai-creta-ev.png",
     features: ["ADAS Level 2", "Panoramic Sunroof", "V2L Technology", "64-color Ambient Light", "OTA Updates"],
     desc: "India's most awaited electric SUV with a stunning 473km range and Hyundai's class-leading BlueLink connectivity."
   },
@@ -111,7 +111,7 @@ const VEHICLES = [
     seats: 5,
     color: "#8b5cf6",
     badge: "Luxury",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Kia_EV6_GT-Line_%28facelift%2C_first_gen%29%2C_front_8.4.23.jpg/1280px-Kia_EV6_GT-Line_%28facelift%2C_first_gen%29%2C_front_8.4.23.jpg",
+    image: "images/kia-ev6.png",
     features: ["800V Ultra-Fast Charging", "AWD GT-Line", "Augmented Reality HUD", "Meridian Audio", "V2L & V2G"],
     desc: "The EV6 sets a global benchmark — 800V ultra-fast charging, 708km range, and award-winning design."
   },
@@ -127,7 +127,7 @@ const VEHICLES = [
     seats: 5,
     color: "#f97316",
     badge: "New",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-curvv-ev.png",
     features: ["Coupe SUV Design", "585km Range", "Digital Cockpit", "JBL Audio", "ADAS Pack"],
     desc: "India's first coupe electric SUV — striking design meets impressive 585km range in this segment-defining car."
   },
@@ -143,7 +143,7 @@ const VEHICLES = [
     seats: 2,
     color: "#84cc16",
     badge: "Scooter",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Ola_S1_Pro.jpg/1280px-Ola_S1_Pro.jpg",
+    image: "images/ola-s1-pro.png",
     features: ["MoveOS 4", "Cruise Control", "Hill Hold", "Proximity Unlock", "Regen Braking"],
     desc: "India's highest-selling electric scooter — smart, stylish and packed with technology for urban commuters."
   },
@@ -159,7 +159,7 @@ const VEHICLES = [
     seats: 5,
     color: "#3b82f6",
     badge: "Ultra Luxury",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/BMW_i4_M50_IAA_2021_1X7A0175.jpg/1280px-BMW_i4_M50_IAA_2021_1X7A0175.jpg",
+    image: "images/bmw-i4.png",
     features: ["Curved iDrive Screen", "M Sport Suspension", "Harman Kardon Audio", "BMW OS 8", "Gesture Control"],
     desc: "The BMW i4 M50 delivers 510km range with M-performance DNA — zero compromises, zero emissions."
   },
@@ -175,7 +175,7 @@ const VEHICLES = [
     seats: 4,
     color: "#ec4899",
     badge: "City Car",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/MG_Comet_EV.jpg/1280px-MG_Comet_EV.jpg",
+    image: "images/mg-comet-ev.png",
     features: ["Dual Screens", "Remote Control via App", "Sliding Rear Door", "360 Cam", "Smart Connect"],
     desc: "Tiny yet tech-packed — the Comet EV is built for the bustling streets of Indian metros with a funky twin-screen cockpit."
   },
@@ -191,7 +191,7 @@ const VEHICLES = [
     seats: 5,
     color: "#64748b",
     badge: "Safe Pick",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/2021_Volvo_XC40_Recharge_P8_AWD_%28facelift%2C_Glacier_Silver%29%2C_front_8.21.21.jpg/1280px-2021_Volvo_XC40_Recharge_P8_AWD_%28facelift%2C_Glacier_Silver%29%2C_front_8.21.21.jpg",
+    image: "images/volvo-xc40-recharge.png",
     features: ["Dual Motor AWD", "Google Built-In", "Pixel LED Lights", "Bowers & Wilkins Audio", "Air Quality System"],
     desc: "Swedish luxury meets Swedish safety in the all-electric XC40 Recharge — the safest EV you can buy in India."
   },
@@ -207,7 +207,7 @@ const VEHICLES = [
     seats: 7,
     color: "#5043b4",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-punch-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -223,7 +223,7 @@ const VEHICLES = [
     seats: 5,
     color: "#d95ff5",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mahindra-be6e.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -239,7 +239,7 @@ const VEHICLES = [
     seats: 5,
     color: "#82eb54",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mg-windsor-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -255,7 +255,7 @@ const VEHICLES = [
     seats: 5,
     color: "#852569",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/byd-seal.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -271,7 +271,7 @@ const VEHICLES = [
     seats: 5,
     color: "#2d4e74",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/hyundai-creta-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -287,7 +287,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b1da6e",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/kia-ev6.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -303,7 +303,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b7091",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-curvv-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -319,7 +319,7 @@ const VEHICLES = [
     seats: 5,
     color: "#fc522b",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/ola-s1-pro.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -335,7 +335,7 @@ const VEHICLES = [
     seats: 7,
     color: "#6a3166",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/bmw-i4.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -351,7 +351,7 @@ const VEHICLES = [
     seats: 5,
     color: "#18744",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mg-comet-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -367,7 +367,7 @@ const VEHICLES = [
     seats: 7,
     color: "#85e052",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/volvo-xc40-recharge.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -383,7 +383,7 @@ const VEHICLES = [
     seats: 5,
     color: "#a36313",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-nexon-ev-max.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -399,7 +399,7 @@ const VEHICLES = [
     seats: 7,
     color: "#fad655",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-punch-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -415,7 +415,7 @@ const VEHICLES = [
     seats: 5,
     color: "#5b22b3",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mahindra-be6e.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -431,7 +431,7 @@ const VEHICLES = [
     seats: 7,
     color: "#c0e1d8",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mg-windsor-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -447,7 +447,7 @@ const VEHICLES = [
     seats: 5,
     color: "#813cd4",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/byd-seal.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -463,7 +463,7 @@ const VEHICLES = [
     seats: 7,
     color: "#c024a9",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/hyundai-creta-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -479,7 +479,7 @@ const VEHICLES = [
     seats: 5,
     color: "#891573",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/kia-ev6.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -495,7 +495,7 @@ const VEHICLES = [
     seats: 5,
     color: "#78ded1",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-curvv-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -511,7 +511,7 @@ const VEHICLES = [
     seats: 7,
     color: "#2f5d9f",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/ola-s1-pro.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -527,7 +527,7 @@ const VEHICLES = [
     seats: 5,
     color: "#9fe27",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/bmw-i4.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -543,7 +543,7 @@ const VEHICLES = [
     seats: 5,
     color: "#68d0b9",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mg-comet-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -559,7 +559,7 @@ const VEHICLES = [
     seats: 7,
     color: "#f78916",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/volvo-xc40-recharge.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -575,7 +575,7 @@ const VEHICLES = [
     seats: 5,
     color: "#f104c9",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-nexon-ev-max.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -591,7 +591,7 @@ const VEHICLES = [
     seats: 5,
     color: "#3133cf",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-punch-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -607,7 +607,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b15e06",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mahindra-be6e.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -623,7 +623,7 @@ const VEHICLES = [
     seats: 5,
     color: "#52acda",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mg-windsor-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -639,7 +639,7 @@ const VEHICLES = [
     seats: 5,
     color: "#cc59b1",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/byd-seal.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -655,7 +655,7 @@ const VEHICLES = [
     seats: 5,
     color: "#223d1b",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/hyundai-creta-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -671,7 +671,7 @@ const VEHICLES = [
     seats: 5,
     color: "#acf7e6",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/kia-ev6.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -687,7 +687,7 @@ const VEHICLES = [
     seats: 7,
     color: "#f66dc4",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-curvv-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -703,7 +703,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b995bd",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/ola-s1-pro.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -719,7 +719,7 @@ const VEHICLES = [
     seats: 7,
     color: "#a6c351",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/bmw-i4.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -735,7 +735,7 @@ const VEHICLES = [
     seats: 5,
     color: "#471f63",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mg-comet-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -751,7 +751,7 @@ const VEHICLES = [
     seats: 5,
     color: "#299ed4",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/volvo-xc40-recharge.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -767,7 +767,7 @@ const VEHICLES = [
     seats: 5,
     color: "#7b0cf6",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-nexon-ev-max.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -783,7 +783,7 @@ const VEHICLES = [
     seats: 5,
     color: "#63dd2f",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/tata-punch-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -799,7 +799,7 @@ const VEHICLES = [
     seats: 5,
     color: "#c3a617",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mahindra-be6e.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -815,7 +815,7 @@ const VEHICLES = [
     seats: 5,
     color: "#f8737a",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/mg-windsor-ev.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -831,7 +831,7 @@ const VEHICLES = [
     seats: 5,
     color: "#49f622",
     badge: "Auto Gen",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tata_Curvv_EV_front_left.jpg/1280px-Tata_Curvv_EV_front_left.jpg",
+    image: "images/byd-seal.png",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   }
