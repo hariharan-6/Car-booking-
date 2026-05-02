@@ -65,7 +65,7 @@ function renderVehicles(filter = "all") {
       <div class="card-badge" style="background:${v.color}20;color:${v.color};border:1px solid ${v.color}40">${v.badge}</div>
       <div class="card-img-wrap">
         <img src="${v.image}" alt="${v.name}" class="card-img" 
-             onerror="this.src='https://via.placeholder.com/400x220/0a0a1a/00d4ff?text=${encodeURIComponent(v.name)}'" 
+             onerror="this.onerror=null; this.src='https://placehold.co/400x220/0a0a1a/00d4ff?text=${encodeURIComponent(v.name)}'" 
              loading="lazy"/>
         <div class="card-img-overlay" style="background:linear-gradient(to top, #080818, transparent)"></div>
       </div>
@@ -118,7 +118,7 @@ function openBooking(vehicleId) {
     <div class="modal-step" id="step1">
       <div class="modal-car-img">
         <img src="${selectedVehicle.image}" alt="${selectedVehicle.name}" 
-             onerror="this.src='https://via.placeholder.com/400x200/0a0a1a/00d4ff?text=${encodeURIComponent(selectedVehicle.name)}'"/>
+             onerror="this.onerror=null; this.src='https://placehold.co/400x200/0a0a1a/00d4ff?text=${encodeURIComponent(selectedVehicle.name)}'"/>
       </div>
       <h2 class="modal-title">Pre-Book <span class="gradient-text">${selectedVehicle.name}</span></h2>
       <p class="modal-price">₹${selectedVehicle.price} Lakh onwards</p>
