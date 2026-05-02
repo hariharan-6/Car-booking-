@@ -207,7 +207,7 @@ const VEHICLES = [
     seats: 7,
     color: "#5043b4",
     badge: "Auto Gen",
-    image: "images/tata-punch-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=101",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -223,7 +223,7 @@ const VEHICLES = [
     seats: 5,
     color: "#d95ff5",
     badge: "Auto Gen",
-    image: "images/mahindra-be6e.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=102",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -239,7 +239,7 @@ const VEHICLES = [
     seats: 5,
     color: "#82eb54",
     badge: "Auto Gen",
-    image: "images/mg-windsor-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=103",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -255,7 +255,7 @@ const VEHICLES = [
     seats: 5,
     color: "#852569",
     badge: "Auto Gen",
-    image: "images/byd-seal.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=104",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -271,7 +271,7 @@ const VEHICLES = [
     seats: 5,
     color: "#2d4e74",
     badge: "Auto Gen",
-    image: "images/hyundai-creta-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=105",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -287,7 +287,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b1da6e",
     badge: "Auto Gen",
-    image: "images/kia-ev6.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=106",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -303,7 +303,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b7091",
     badge: "Auto Gen",
-    image: "images/tata-curvv-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=107",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -319,7 +319,7 @@ const VEHICLES = [
     seats: 5,
     color: "#fc522b",
     badge: "Auto Gen",
-    image: "images/ola-s1-pro.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=108",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -335,7 +335,7 @@ const VEHICLES = [
     seats: 7,
     color: "#6a3166",
     badge: "Auto Gen",
-    image: "images/bmw-i4.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=109",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -351,7 +351,7 @@ const VEHICLES = [
     seats: 5,
     color: "#18744",
     badge: "Auto Gen",
-    image: "images/mg-comet-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=110",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -367,7 +367,7 @@ const VEHICLES = [
     seats: 7,
     color: "#85e052",
     badge: "Auto Gen",
-    image: "images/volvo-xc40-recharge.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=111",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -383,7 +383,7 @@ const VEHICLES = [
     seats: 5,
     color: "#a36313",
     badge: "Auto Gen",
-    image: "images/tata-nexon-ev-max.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=112",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -399,7 +399,7 @@ const VEHICLES = [
     seats: 7,
     color: "#fad655",
     badge: "Auto Gen",
-    image: "images/tata-punch-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=113",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -415,7 +415,7 @@ const VEHICLES = [
     seats: 5,
     color: "#5b22b3",
     badge: "Auto Gen",
-    image: "images/mahindra-be6e.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=114",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -431,7 +431,7 @@ const VEHICLES = [
     seats: 7,
     color: "#c0e1d8",
     badge: "Auto Gen",
-    image: "images/mg-windsor-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=115",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -447,7 +447,7 @@ const VEHICLES = [
     seats: 5,
     color: "#813cd4",
     badge: "Auto Gen",
-    image: "images/byd-seal.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=116",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -463,7 +463,7 @@ const VEHICLES = [
     seats: 7,
     color: "#c024a9",
     badge: "Auto Gen",
-    image: "images/hyundai-creta-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=117",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -479,7 +479,7 @@ const VEHICLES = [
     seats: 5,
     color: "#891573",
     badge: "Auto Gen",
-    image: "images/kia-ev6.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=118",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -495,7 +495,7 @@ const VEHICLES = [
     seats: 5,
     color: "#78ded1",
     badge: "Auto Gen",
-    image: "images/tata-curvv-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=119",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -511,7 +511,7 @@ const VEHICLES = [
     seats: 7,
     color: "#2f5d9f",
     badge: "Auto Gen",
-    image: "images/ola-s1-pro.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=120",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -527,7 +527,7 @@ const VEHICLES = [
     seats: 5,
     color: "#9fe27",
     badge: "Auto Gen",
-    image: "images/bmw-i4.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=121",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -543,7 +543,7 @@ const VEHICLES = [
     seats: 5,
     color: "#68d0b9",
     badge: "Auto Gen",
-    image: "images/mg-comet-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=122",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -559,7 +559,7 @@ const VEHICLES = [
     seats: 7,
     color: "#f78916",
     badge: "Auto Gen",
-    image: "images/volvo-xc40-recharge.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=123",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -575,7 +575,7 @@ const VEHICLES = [
     seats: 5,
     color: "#f104c9",
     badge: "Auto Gen",
-    image: "images/tata-nexon-ev-max.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=124",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -591,7 +591,7 @@ const VEHICLES = [
     seats: 5,
     color: "#3133cf",
     badge: "Auto Gen",
-    image: "images/tata-punch-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=125",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -607,7 +607,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b15e06",
     badge: "Auto Gen",
-    image: "images/mahindra-be6e.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=126",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -623,7 +623,7 @@ const VEHICLES = [
     seats: 5,
     color: "#52acda",
     badge: "Auto Gen",
-    image: "images/mg-windsor-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=127",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -639,7 +639,7 @@ const VEHICLES = [
     seats: 5,
     color: "#cc59b1",
     badge: "Auto Gen",
-    image: "images/byd-seal.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=128",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -655,7 +655,7 @@ const VEHICLES = [
     seats: 5,
     color: "#223d1b",
     badge: "Auto Gen",
-    image: "images/hyundai-creta-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=129",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -671,7 +671,7 @@ const VEHICLES = [
     seats: 5,
     color: "#acf7e6",
     badge: "Auto Gen",
-    image: "images/kia-ev6.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=130",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -687,7 +687,7 @@ const VEHICLES = [
     seats: 7,
     color: "#f66dc4",
     badge: "Auto Gen",
-    image: "images/tata-curvv-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=131",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -703,7 +703,7 @@ const VEHICLES = [
     seats: 5,
     color: "#b995bd",
     badge: "Auto Gen",
-    image: "images/ola-s1-pro.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=132",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -719,7 +719,7 @@ const VEHICLES = [
     seats: 7,
     color: "#a6c351",
     badge: "Auto Gen",
-    image: "images/bmw-i4.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=133",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -735,7 +735,7 @@ const VEHICLES = [
     seats: 5,
     color: "#471f63",
     badge: "Auto Gen",
-    image: "images/mg-comet-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=134",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -751,7 +751,7 @@ const VEHICLES = [
     seats: 5,
     color: "#299ed4",
     badge: "Auto Gen",
-    image: "images/volvo-xc40-recharge.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=135",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -767,7 +767,7 @@ const VEHICLES = [
     seats: 5,
     color: "#7b0cf6",
     badge: "Auto Gen",
-    image: "images/tata-nexon-ev-max.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=136",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -783,7 +783,7 @@ const VEHICLES = [
     seats: 5,
     color: "#63dd2f",
     badge: "Auto Gen",
-    image: "images/tata-punch-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=137",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -799,7 +799,7 @@ const VEHICLES = [
     seats: 5,
     color: "#c3a617",
     badge: "Auto Gen",
-    image: "images/mahindra-be6e.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=138",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -815,7 +815,7 @@ const VEHICLES = [
     seats: 5,
     color: "#f8737a",
     badge: "Auto Gen",
-    image: "images/mg-windsor-ev.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=139",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   },
@@ -831,7 +831,7 @@ const VEHICLES = [
     seats: 5,
     color: "#49f622",
     badge: "Auto Gen",
-    image: "images/byd-seal.png",
+    image: "https://loremflickr.com/600/400/car,electric?lock=140",
     features: ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"],
     desc: "A powerful and efficient electric vehicle generated for testing purposes."
   }
